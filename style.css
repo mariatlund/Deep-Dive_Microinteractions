@@ -508,7 +508,7 @@ button:hover:before {
 }
 
 .preloader-active {
-  background-color: #29ad6b;
+  background-color: #bada55;
   position: absolute;
   top: 0;
   width: 100%;
