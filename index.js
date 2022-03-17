@@ -1,4 +1,4 @@
-// burger button js
+// BURGER MENU
 
 const showNav = () => {
   const burger = document.querySelector(".burger");
@@ -11,10 +11,17 @@ const showNav = () => {
 
 showNav();
 
-const text = document.querySelector("#circleText a");
-text.innerHTML = text.innerText
-  .split("")
-  .map(
-    (char, i) => `<span style="transform:rotate(${i * 9.5}deg)">${char}</span>`
-  )
-  .join("");
+// PRELOADER
+
+document.querySelector(".preload-container").classList.add("hidden");
+document.querySelector(".preload-button").addEventListener("click", () => {
+  pageLoad();
+});
+
+function pageLoad() {
+  // document.querySelector(".preload-button").remove();
+  document.querySelector(".preload-container").classList.remove("hidden");
+  document
+    .querySelector(".preload-container")
+    .classList.add("preloader-active");
+}

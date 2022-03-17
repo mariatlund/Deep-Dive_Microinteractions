@@ -6,8 +6,16 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   color: #2e8612;
-  height: 100%;
 }
+
+main {
+  margin-inline: 10%;
+  margin-bottom: 10%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 5%;
+}
+
 h1 {
   font-weight: 100;
   text-align: center;
@@ -15,6 +23,11 @@ h1 {
   padding: 0;
   font-size: 300%;
   margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.hidden {
+  display: none;
 }
 
 /*--------------- BURGER MENU ---------------*/
@@ -81,7 +94,7 @@ body {
 /* --------------- RADIO BUTTONS ---------------*/
 .radio-buttons {
   box-sizing: border-box;
-  margin: 5%;
+  /* margin-inline: 5%; */
 }
 
 ul {
@@ -413,24 +426,30 @@ input[type="radio"]:checked ~ .bullet .line.seven {
 
 /* --------------- CTA BUTTONS ---------------- */
 
+.CTA-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CTA-buttons a {
+  align-self: flex-end;
+  /* margin-top: 10%; */
+}
+
 button {
   font-size: 110%;
-  line-height: 1;
   color: #fff;
-  letter-spacing: 0.025em;
 
   background: #2e8612;
   padding: 18px 0 11px;
   cursor: pointer;
   border: 0;
   border-radius: 2px;
-  min-width: 120px;
   overflow: hidden;
 
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 120px;
+  transform: translate(0%, 0%);
 }
 
 button span {
@@ -474,4 +493,58 @@ button:hover:after {
 button:hover:before {
   left: calc(0% - 10px);
   transition: left 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+/* --------------- PAGE PRELOADER --------------- */
+
+.preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preload-button {
+  position: relative;
+}
+
+.preloader-active {
+  background-color: #29ad6b;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 130%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.preload-text {
+  position: absolute;
+  top: 35%;
+}
+
+.preload-text span {
+  position: relative;
+  display: inline-block;
+}
+
+.preload-text span::after {
+  position: absolute;
+  content: "";
+  background: #bada55;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: reveal 1s infinite;
+  transform-origin: right;
+}
+
+@keyframes reveal {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
 }
